@@ -1,72 +1,27 @@
 import { Routes } from '@angular/router';
-import { ContentPageComponent } from './pages/content.page';
-import { HomePageComponent } from './pages/home.page';
+import { EvenementenBijeenkomstenPageComponent } from './pages/evenementen-bijeenkomsten/evenementen-bijeenkomsten.page';
+import { ExpertiseInspiratiePageComponent } from './pages/expertise-inspiratie/expertise-inspiratie.page';
+import { HomePageComponent } from './pages/home/home.page';
+import { MijnInspiratiePageComponent } from './pages/mijn-inspiratie/mijn-inspiratie.page';
+import { OntmoetBeleefPageComponent } from './pages/ontmoet-beleef/ontmoet-beleef.page';
+import { PartnersSamenwerkingenPageComponent } from './pages/partners-samenwerkingen/partners-samenwerkingen.page';
+import { PlanEenSessiePageComponent } from './pages/plan-een-sessie/plan-een-sessie.page';
+import { RuimtesMogelijkhedenPageComponent } from './pages/ruimtes-mogelijkheden/ruimtes-mogelijkheden.page';
+import { SuccesverhalenPageComponent } from './pages/succesverhalen/succesverhalen.page';
+import { ZakelijkeNieuwsbriefPageComponent } from './pages/zakelijke-nieuwsbrief/zakelijke-nieuwsbrief.page';
 
 export const routes: Routes = [
 	{ path: '', component: HomePageComponent },
-	{
-		path: 'inspiratie',
-		component: ContentPageComponent,
-		data: {
-			title: 'Inspiratie',
-			description: 'Ontdek inspirerende concepten, sfeerbeelden en hospitality-ideeën voor zakelijke bijeenkomsten.',
-		},
-	},
-	{
-		path: 'succesverhalen',
-		component: ContentPageComponent,
-		data: {
-			title: 'Succesverhalen',
-			description: 'Lees hoe organisaties via Hotel Jakarta impactvolle events en langdurige samenwerkingen realiseerden.',
-		},
-	},
-	{
-		path: 'ruimtes-mogelijkheden',
-		component: ContentPageComponent,
-		data: {
-			title: 'Ruimtes & mogelijkheden',
-			description: 'Bekijk beschikbare ruimtes, opstellingen en maatwerkopties voor meetings, diners en conferenties.',
-		},
-	},
-	{
-		path: 'bijeenkomsten-events',
-		component: ContentPageComponent,
-		data: {
-			title: 'Bijeenkomsten & events',
-			description: 'Van board meeting tot grootschalig event: overzicht van formats, programma-opties en begeleiding.',
-		},
-	},
-	{
-		path: 'inzichten-trends',
-		component: ContentPageComponent,
-		data: {
-			title: 'Inzichten & trends',
-			description: 'Blijf op de hoogte van trends in zakelijke hospitality, duurzaamheid en belevingsdesign.',
-		},
-	},
-	{
-		path: 'partners-samenwerkingen',
-		component: ContentPageComponent,
-		data: {
-			title: 'Partners & samenwerkingen',
-			description: 'Leer de partners kennen waarmee Hotel Jakarta samenwerkt om hoogwaardige ervaringen te creëren.',
-		},
-	},
-	{
-		path: 'mijn-inspiratie',
-		component: ContentPageComponent,
-		data: {
-			title: 'Mijn inspiratie',
-			description: 'Verzamel en beheer favoriete ideeën, cases en concepten voor jouw volgende zakelijke bijeenkomst.',
-		},
-	},
-	{
-		path: 'plan-een-inspiratiesessie',
-		component: ContentPageComponent,
-		data: {
-			title: 'Plan een inspiratiesessie',
-			description: 'Plan een sessie met het team van Hotel Jakarta om jouw eventdoelen te vertalen naar een concreet plan.',
-		},
-	},
+	{ path: 'bijeenkomsten-events', component: EvenementenBijeenkomstenPageComponent },
+	{ path: 'inspiratie', component: ExpertiseInspiratiePageComponent },
+	{ path: 'ontmoet-beleef', component: OntmoetBeleefPageComponent },
+	{ path: 'ruimtes-mogelijkheden', component: RuimtesMogelijkhedenPageComponent },
+	{ path: 'succesverhalen', component: SuccesverhalenPageComponent },
+	{ path: 'partners-samenwerkingen', component: PartnersSamenwerkingenPageComponent },
+	{ path: 'mijn-inspiratie', component: MijnInspiratiePageComponent },
+	{ path: 'plan-een-sessie', component: PlanEenSessiePageComponent },
+	{ path: 'zakelijke-nieuwsbrief', component: ZakelijkeNieuwsbriefPageComponent },
+	{ path: 'inzichten-trends', redirectTo: 'inspiratie' },
+	{ path: 'plan-een-inspiratiesessie', redirectTo: 'plan-een-sessie' },
 	{ path: '**', redirectTo: '' },
 ];

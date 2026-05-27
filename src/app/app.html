@@ -1,9 +1,50 @@
 <div class="page-bg"></div>
 
-<div class="layout">
-  <aside class="sidebar">
+<header class="top-navbar">
+  <div class="top-navbar__left">
+    <button
+      class="hamburger-btn"
+      type="button"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="isMenuOpen"
+      aria-label="Menu openen of sluiten"
+    >
+      <span class="hamburger-lines" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+      <span class="hamburger-label">MENU</span>
+    </button>
+  </div>
+
+  <nav class="top-navbar__right" aria-label="Snelle links">
+    <a href="#">FAQ</a>
+    <a href="#">Contact en bereikbaarheid</a>
+    <a href="#">Vacatures</a>
+    <a href="#">Mijn reservering</a>
+    <button class="lang-btn" type="button" aria-label="Taal kiezen">
+      <span>NL</span>
+      <span class="lang-caret">▼</span>
+    </button>
+    <button class="search-btn" type="button" aria-label="Zoeken">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M10.5 3.5a7 7 0 1 0 4.42 12.43l4.32 4.32 1.41-1.41-4.32-4.32A7 7 0 0 0 10.5 3.5Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"
+        />
+      </svg>
+    </button>
+  </nav>
+</header>
+
+@if (isMenuOpen) {
+  <button class="menu-overlay" type="button" (click)="toggleMenu()" aria-label="Menu sluiten"></button>
+}
+
+<div class="layout" [class.sidebar-collapsed]="!isMenuOpen">
+  <aside class="sidebar" [attr.aria-hidden]="!isMenuOpen">
     <div class="brand">
-      <span class="brand-mark">JC</span>
+      <img class="brand-logo" src="/Jakarta Logo.jpeg" alt="Jakarta Connect logo" />
       <div>
         <p class="brand-title">Jakarta Connect</p>
         <p class="brand-subtitle">Kennisplatform</p>
@@ -12,8 +53,14 @@
 
     <nav aria-label="Pagina navigatie">
       @for (item of navItems; track item.path) {
-        <a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: item.path === '/' }">
-          {{ item.label }}
+        <a
+          [routerLink]="item.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: item.path === '/' }"
+          (click)="closeMenuOnNavigate()"
+        >
+          <span class="nav-label-full">{{ item.label }}</span>
+          <span class="nav-label-compact">{{ item.shortLabel }}</span>
         </a>
       }
     </nav>
