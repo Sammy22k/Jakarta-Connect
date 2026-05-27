@@ -1,10 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 import { App } from './app';
+import { provideRouter } from '@angular/router';
+import { routes } from './app.routes';
 
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [App],
+      providers: [provideRouter(routes)],
     }).compileComponents();
   });
 
@@ -14,12 +17,11 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render hero title', async () => {
+  it('should render sidebar navigation item', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
+    fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Het digitale relatie- en inspiratieplatform van Hotel Jakarta'
-    );
+    expect(compiled.textContent).toContain('Plan een inspiratiesessie');
   });
 });

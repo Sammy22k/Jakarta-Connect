@@ -1,123 +1,30 @@
 <div class="page-bg"></div>
 
-<main class="page">
-  <header class="topbar">
+<div class="layout">
+  <aside class="sidebar">
     <div class="brand">
       <span class="brand-mark">JC</span>
       <div>
         <p class="brand-title">Jakarta Connect</p>
-        <p class="brand-subtitle">Kennisplatform voor zakelijke relaties</p>
+        <p class="brand-subtitle">Kennisplatform</p>
       </div>
     </div>
-    <nav aria-label="Hoofdmenu">
-      <a href="#platform">Platform</a>
-      <a href="#cases">Klantcases</a>
-      <a href="#kennis">Kennisbank</a>
-      <a href="#contact">Contact</a>
+
+    <nav aria-label="Pagina navigatie">
+      @for (item of navItems; track item.path) {
+        <a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: item.path === '/' }">
+          {{ item.label }}
+        </a>
+      }
     </nav>
-  </header>
+  </aside>
 
-  <section id="platform" class="hero section-card">
-    <div class="hero-copy reveal">
-      <p class="eyebrow">Two worlds connected</p>
-      <h1>Het digitale relatie- en inspiratieplatform van Hotel Jakarta</h1>
-      <p class="lead">
-        Jakarta Connect is de online omgeving waar zakelijke gasten inspiratie, thought leadership,
-        klantcases en eventmogelijkheden vinden. Het platform ondersteunt de klantreis van eerste
-        kennismaking tot duurzame samenwerking.
-      </p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#kennis">Bekijk kennisbank</a>
-        <a class="btn btn-ghost" href="#cases">Bekijk klantcases</a>
-      </div>
-    </div>
+  <main class="content-wrap">
+    <router-outlet></router-outlet>
 
-    <aside class="hero-visual reveal">
-      <p class="visual-tag">Live platformweergave</p>
-      <div class="screen-frame">
-        <div class="screen-head">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="screen-grid">
-          <article>
-            <h3>Events</h3>
-            <p>Boardrooms, networking, executive meetings.</p>
-          </article>
-          <article>
-            <h3>Nieuws</h3>
-            <p>Hospitality trends, duurzaamheid en community.</p>
-          </article>
-          <article>
-            <h3>Cases</h3>
-            <p>Concrete verhalen met meetbaar resultaat.</p>
-          </article>
-        </div>
-      </div>
-    </aside>
-  </section>
-
-  <section class="section-card roadmap-wrap">
-    <h2>Zakelijke klantreis volgens AIDA</h2>
-    <div class="roadmap-grid">
-      @for (item of roadmap; track item.title) {
-        <article class="roadmap-card reveal">
-          <p class="phase">{{ item.fase }}</p>
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.description }}</p>
-          <p class="role">{{ item.role }}</p>
-        </article>
-      }
-    </div>
-  </section>
-
-  <section id="kennis" class="section-card">
-    <div class="section-head">
-      <p class="eyebrow">Kennisbank</p>
-      <h2>Informatie over Hotel Jakarta voor de zakelijke doelgroep</h2>
-    </div>
-    <div class="insight-grid">
-      @for (item of insights; track item.title) {
-        <article class="insight-card reveal">
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.description }}</p>
-          <a href="#">{{ item.link }}</a>
-        </article>
-      }
-    </div>
-  </section>
-
-  <section id="cases" class="section-card">
-    <div class="section-head">
-      <p class="eyebrow">Klantcases</p>
-      <h2>Praktijkverhalen die zakelijke impact laten zien</h2>
-    </div>
-    <div class="case-list">
-      @for (item of cases; track item.klant) {
-        <article class="case-card reveal">
-          <div>
-            <p class="case-client">{{ item.klant }}</p>
-            <h3>{{ item.resultaat }}</h3>
-            <p>{{ item.samenvatting }}</p>
-          </div>
-          <a class="case-link" href="#">Lees case</a>
-        </article>
-      }
-    </div>
-  </section>
-
-  <section id="contact" class="section-card cta-block reveal">
-    <h2>Klaar om jouw zakelijke event of samenwerking te verkennen?</h2>
-    <p>
-      Plan een kennismakingsgesprek met het zakelijke team van Hotel Jakarta en ontdek hoe Jakarta
-      Connect jouw organisatie verder kan helpen.
-    </p>
-    <a class="btn btn-primary" href="#">Neem contact op</a>
-  </section>
-
-  <footer>
-    <p>Javakade 766, Amsterdam</p>
-    <p>Hotel Jakarta Connect | {{ currentYear }}</p>
-  </footer>
-</main>
+    <footer>
+      <p>Javakade 766, Amsterdam</p>
+      <p>Hotel Jakarta Connect | {{ currentYear }}</p>
+    </footer>
+  </main>
+</div>
