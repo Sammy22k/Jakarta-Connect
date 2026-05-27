@@ -1,0 +1,410 @@
+:host {
+	--base-cream: #f2eee6;
+	--deep-green: #0f5a33;
+	--forest: #1a6f40;
+	--text-dark: #162018;
+	--soft-border: #2f7e50;
+	--card: #fcfaf5;
+	--shadow: 0 18px 45px rgba(13, 56, 33, 0.14);
+	display: block;
+	color: var(--text-dark);
+}
+
+.page-bg {
+	position: fixed;
+	inset: 0;
+	z-index: -2;
+	background:
+		linear-gradient(rgba(14, 42, 27, 0.5), rgba(14, 42, 27, 0.5)),
+		url('/hotel-jakarta-amsterdam-westcord-hotels-hortus-botanicus-subtropische-tuin-4.jpg') center/cover
+			no-repeat;
+}
+
+.page {
+	max-width: 1160px;
+	margin: 0 auto;
+	padding: 1.2rem 1rem 3rem;
+}
+
+.topbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 1.25rem;
+	padding: 0.7rem 0;
+}
+
+.brand {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+}
+
+.brand-mark {
+	width: 2.6rem;
+	height: 2.6rem;
+	border-radius: 0.9rem;
+	display: grid;
+	place-items: center;
+	font-family: 'Bricolage Grotesque', sans-serif;
+	font-weight: 800;
+	letter-spacing: 0.02em;
+	background: linear-gradient(135deg, #1f7f4b, #0f5a33);
+	color: #f7f3ea;
+}
+
+.brand-title {
+	margin: 0;
+	font-family: 'Bricolage Grotesque', sans-serif;
+	font-size: 1.1rem;
+	font-weight: 700;
+}
+
+.brand-subtitle {
+	margin: 0;
+	font-size: 0.84rem;
+	color: rgba(22, 32, 24, 0.76);
+}
+
+nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.9rem;
+}
+
+nav a {
+	text-decoration: none;
+	color: var(--deep-green);
+	font-weight: 600;
+	font-size: 0.92rem;
+}
+
+.section-card {
+	background: color-mix(in oklab, var(--card), #ffffff 18%);
+	border: 2px solid rgba(20, 94, 52, 0.18);
+	border-radius: 28px;
+	box-shadow: var(--shadow);
+	padding: clamp(1rem, 2.4vw, 2rem);
+	margin-bottom: 1rem;
+}
+
+.hero {
+	display: grid;
+	grid-template-columns: 1.15fr 0.85fr;
+	gap: 1rem;
+}
+
+.hero h1 {
+	margin: 0.35rem 0 0.75rem;
+	font-family: 'Bricolage Grotesque', sans-serif;
+	font-size: clamp(1.8rem, 4vw, 3.1rem);
+	line-height: 1.05;
+	max-width: 19ch;
+}
+
+.lead {
+	max-width: 58ch;
+	line-height: 1.6;
+	color: rgba(22, 32, 24, 0.9);
+}
+
+.eyebrow {
+	margin: 0;
+	color: var(--forest);
+	text-transform: uppercase;
+	letter-spacing: 0.14em;
+	font-size: 0.74rem;
+	font-weight: 700;
+}
+
+.cta-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.7rem;
+	margin-top: 1rem;
+}
+
+.btn {
+	border-radius: 999px;
+	padding: 0.65rem 1.1rem;
+	text-decoration: none;
+	font-weight: 700;
+	transition: transform 220ms ease, background-color 220ms ease;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.btn:hover {
+	transform: translateY(-2px);
+}
+
+.btn-primary {
+	background: var(--deep-green);
+	color: #f8f5ef;
+}
+
+.btn-primary:hover {
+	background: #0d4d2c;
+}
+
+.btn-ghost {
+	border: 2px solid rgba(15, 90, 51, 0.28);
+	color: var(--deep-green);
+}
+
+.hero-visual {
+	border: 2px dashed rgba(20, 91, 52, 0.24);
+	border-radius: 24px;
+	padding: 0.8rem;
+	background: linear-gradient(180deg, rgba(240, 248, 239, 0.9), rgba(233, 242, 230, 0.95));
+}
+
+.visual-tag {
+	margin: 0 0 0.6rem;
+	font-size: 0.78rem;
+	color: var(--forest);
+	font-weight: 700;
+}
+
+.screen-frame {
+	background: #123c28;
+	border-radius: 16px;
+	padding: 0.75rem;
+	color: #ecf7ee;
+}
+
+.screen-head {
+	display: flex;
+	gap: 0.3rem;
+	margin-bottom: 0.6rem;
+}
+
+.screen-head span {
+	width: 0.45rem;
+	height: 0.45rem;
+	border-radius: 50%;
+	background: #93be9f;
+}
+
+.screen-grid {
+	display: grid;
+	gap: 0.5rem;
+}
+
+.screen-grid article {
+	background: rgba(255, 255, 255, 0.08);
+	border-radius: 12px;
+	padding: 0.65rem;
+}
+
+.screen-grid h3 {
+	margin: 0 0 0.2rem;
+	font-size: 0.98rem;
+}
+
+.screen-grid p {
+	margin: 0;
+	font-size: 0.8rem;
+	line-height: 1.35;
+}
+
+.roadmap-wrap h2,
+.section-head h2,
+.cta-block h2 {
+	margin-top: 0;
+	margin-bottom: 0.8rem;
+	font-family: 'Bricolage Grotesque', sans-serif;
+	line-height: 1.1;
+}
+
+.roadmap-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 0.7rem;
+}
+
+.roadmap-card {
+	border: 2px solid var(--soft-border);
+	border-radius: 20px;
+	padding: 0.8rem;
+	background: #fcf9f2;
+}
+
+.phase {
+	margin: 0;
+	font-family: 'Bricolage Grotesque', sans-serif;
+	font-size: 1.55rem;
+	color: var(--deep-green);
+}
+
+.roadmap-card h3 {
+	margin: 0.2rem 0 0.45rem;
+}
+
+.roadmap-card p {
+	margin: 0;
+	line-height: 1.45;
+}
+
+.roadmap-card .role {
+	margin-top: 0.5rem;
+	font-weight: 600;
+	color: rgba(22, 32, 24, 0.88);
+}
+
+.insight-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0.7rem;
+}
+
+.insight-card {
+	background: #f9f6ee;
+	border-radius: 18px;
+	border: 1px solid rgba(31, 104, 61, 0.23);
+	padding: 0.9rem;
+}
+
+.insight-card h3 {
+	margin-top: 0;
+	margin-bottom: 0.35rem;
+}
+
+.insight-card p {
+	margin: 0;
+	line-height: 1.52;
+}
+
+.insight-card a {
+	margin-top: 0.65rem;
+	display: inline-block;
+	color: var(--deep-green);
+	text-decoration: none;
+	font-weight: 700;
+}
+
+.case-list {
+	display: grid;
+	gap: 0.7rem;
+}
+
+.case-card {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	align-items: flex-start;
+	border: 1px solid rgba(23, 98, 59, 0.24);
+	border-radius: 18px;
+	padding: 0.9rem;
+	background: #f8f6f0;
+}
+
+.case-client {
+	margin: 0;
+	color: var(--forest);
+	font-size: 0.84rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+}
+
+.case-card h3 {
+	margin: 0.3rem 0;
+}
+
+.case-card p {
+	margin: 0;
+	line-height: 1.5;
+}
+
+.case-link {
+	text-decoration: none;
+	color: var(--deep-green);
+	font-weight: 700;
+	white-space: nowrap;
+}
+
+.cta-block {
+	text-align: center;
+}
+
+.cta-block p {
+	max-width: 62ch;
+	margin: 0 auto 1rem;
+	line-height: 1.6;
+}
+
+footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.8rem;
+	flex-wrap: wrap;
+	font-size: 0.84rem;
+	color: rgba(22, 32, 24, 0.83);
+	padding: 0.5rem 0.2rem;
+}
+
+.reveal {
+	opacity: 0;
+	transform: translateY(12px);
+	animation: reveal-up 680ms ease forwards;
+}
+
+.roadmap-card:nth-child(2),
+.insight-card:nth-child(2),
+.case-card:nth-child(2) {
+	animation-delay: 140ms;
+}
+
+.roadmap-card:nth-child(3),
+.insight-card:nth-child(3),
+.case-card:nth-child(3) {
+	animation-delay: 220ms;
+}
+
+.roadmap-card:nth-child(4) {
+	animation-delay: 300ms;
+}
+
+@keyframes reveal-up {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (max-width: 960px) {
+	.hero {
+		grid-template-columns: 1fr;
+	}
+
+	.roadmap-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.insight-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 720px) {
+	.topbar {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.roadmap-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.case-card {
+		flex-direction: column;
+	}
+
+	.case-link {
+		white-space: normal;
+	}
+}
