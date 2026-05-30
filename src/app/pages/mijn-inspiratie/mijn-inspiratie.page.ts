@@ -4,11 +4,14 @@ type InspirationItem = {
   title: string;
   category: string;
   image: string;
+  imagePosition?: string;
+  imageFit?: 'cover' | 'contain';
 };
 
 type ArticleItem = {
   title: string;
   type: string;
+  readTime: string;
   summary: string;
   image: string;
 };
@@ -43,7 +46,13 @@ export class MijnInspiratiePageComponent {
   protected readonly heroImage = '/headerfoto inspritatie.jpg';
 
   protected readonly opgeslagenInspiratie: InspirationItem[] = [
-    { title: 'Malabar bijeenkomst', category: 'Netwerkevent', image: '/malabar.jpg' },
+    {
+      title: 'Malabar bijeenkomst',
+      category: 'Netwerkevent',
+      image: '/malabar.jpg',
+      imagePosition: '50% 50%',
+      imageFit: 'contain',
+    },
     { title: 'Duurzame boardmeeting', category: 'Vergadering', image: '/duurzame boardmeeting.jpg' },
     { title: 'Kick-off evenement', category: 'Bedrijfsevent', image: '/kickoff evenement.jpg' },
   ];
@@ -52,18 +61,21 @@ export class MijnInspiratiePageComponent {
     {
       title: 'Hospitality trends 2025',
       type: 'Artikel',
+      readTime: '5 min leestijd',
       summary: 'De belangrijkste ontwikkelingen in hospitality en events.',
       image: '/Succesverhalen.jpg',
     },
     {
       title: 'Duurzaam vergaderen',
       type: 'Artikel',
+      readTime: '4 min leestijd',
       summary: 'Praktische tips voor duurzame bijeenkomsten met impact.',
       image: '/ontdek en beleef.jpg',
     },
     {
       title: 'Van strategie tot beleving',
       type: 'Klantcase',
+      readTime: '3 min leestijd',
       summary: 'Hoe Deloitte een leiderschapsevent organiseerde bij Hotel Jakarta.',
       image: '/expertise en inspiratie.jpg',
     },

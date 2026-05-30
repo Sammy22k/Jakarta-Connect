@@ -124,6 +124,8 @@
 .card__media {
   position: relative;
   background: #12231b;
+  aspect-ratio: 14 / 9;
+  overflow: hidden;
 }
 
 .card__img,
@@ -140,6 +142,55 @@
 
 .article-thumb {
   min-height: 5.7rem;
+}
+
+.card--article {
+  display: grid;
+  grid-template-columns: 4.25rem 1fr;
+  align-items: stretch;
+  min-height: 6rem;
+}
+
+.card--article .article-thumb {
+  width: 100%;
+  min-height: 100%;
+}
+
+.card--article .card__body {
+  position: relative;
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.5rem 1.55rem 0.45rem 0.55rem;
+}
+
+.card--article .card__body h3 {
+  font-size: 0.86rem;
+  line-height: 1.18;
+}
+
+.article-meta {
+  margin: 0;
+  color: #505652;
+  font-size: 0.7rem;
+}
+
+.card--article .card__body p {
+  margin: 0;
+  font-size: 0.74rem;
+  line-height: 1.35;
+}
+
+.article-save {
+  position: absolute;
+  right: 0.48rem;
+  bottom: 0.4rem;
+  width: 0.7rem;
+  height: 0.88rem;
+  border: 1px solid #a9adab;
+  border-radius: 0.14rem 0.14rem 0.08rem 0.08rem;
+  background: #ffffff;
+  padding: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 78%, 0 100%);
 }
 
 .icon-chip {
