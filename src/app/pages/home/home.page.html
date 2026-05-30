@@ -1,10 +1,9 @@
 <section class="hero hero-panel reveal">
   <div class="hero-copy">
-    <p class="eyebrow">Meer dan een vergaderlocatie</p>
+    <p class="eyebrow">Meer dan een vergaderlocatie.</p>
     <h1>Een partner voor impactvolle zakelijke bijeenkomsten.</h1>
     <p class="lead">
-      Jakarta Connect inspireert, deelt kennis en ondersteunt organisaties bij bijeenkomsten die
-      verbinden, inspireren en resultaat opleveren.
+      Met Jakarta Connect inspireert en ondersteunt Hotel Jakarta organisaties bij bijeenkomsten die verbinden, inspireren en resultaat opleveren. Kom vergaderen in een groene oase en in onze tropische binnentuin.
     </p>
 
     <div class="cta-row">
@@ -25,7 +24,7 @@
   <aside class="hero-visual" aria-label="Zakelijke beleving bij Hotel Jakarta">
     <div class="hero-image-shell">
       <img
-        [ngSrc]="heroImage"
+        [ngSrc]="topHeroImage"
         width="1280"
         height="600"
         priority
@@ -61,7 +60,15 @@
   <div class="feature-grid">
     @for (item of insights; track item.title) {
       <a class="feature-card reveal" [routerLink]="[item.route]">
-        <div class="feature-card__image feature-card__image--hotel"></div>
+        <div class="feature-card__image">
+          <img
+            [ngSrc]="item.image"
+            width="1280"
+            height="720"
+            class="feature-card__img"
+            [alt]="item.imageAlt"
+          />
+        </div>
         <div class="feature-card__body">
           <h3>{{ item.title }}</h3>
           <p>{{ item.description }}</p>

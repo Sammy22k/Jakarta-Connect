@@ -1,8 +1,176 @@
-<section class="content-card">
-  <p class="eyebrow">Jakarta Connect</p>
-  <h1>Mijn inspiratie</h1>
-  <p>
-    Bewaar en beheer je favoriete ideeen, cases en formats, zodat je sneller een sterk concept
-    voor je volgende sessie of event samenstelt.
-  </p>
-</section>
+<main class="inspiratie-page">
+  <section class="hero">
+    <img
+      [src]="heroImage"
+      width="1600"
+      height="560"
+      priority
+      class="hero__image"
+      alt="Sfeervolle vergaderruimte in Hotel Jakarta tijdens zonsondergang"
+    />
+    <div class="hero__overlay">
+      <h1>Mijn inspiratie</h1>
+      <p>
+        Jouw persoonlijke omgeving voor inspiratie, ideeen en plannen.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-block">
+    <div class="section-head">
+      <h2>Opgeslagen inspiratie</h2>
+      <a href="#" aria-label="Bekijk alle opgeslagen inspiratie">Bekijk alles -></a>
+    </div>
+
+    <div class="card-grid card-grid--four">
+      @for (item of opgeslagenInspiratie; track item.title) {
+        <article class="card card--visual">
+          <div class="card__media">
+            <img
+              [src]="item.image"
+              width="560"
+              height="360"
+              class="card__img"
+              [alt]="item.title"
+            />
+            <button class="icon-chip" type="button" aria-label="Bewaar item">o</button>
+          </div>
+          <div class="card__body">
+            <h3>{{ item.title }}</h3>
+            <span class="meta-pill">{{ item.category }}</span>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="section-block">
+    <div class="section-head">
+      <h2>Recent bekeken</h2>
+      <a href="#" aria-label="Bekijk alle recent bekeken items">Bekijk alles -></a>
+    </div>
+
+    <div class="card-grid card-grid--three">
+      @for (item of recentBekeken; track item.title) {
+        <article class="card card--article">
+          <img
+            [src]="item.image"
+            width="320"
+            height="220"
+            class="article-thumb"
+            [alt]="item.title"
+          />
+          <div class="card__body">
+            <span class="meta">{{ item.type }}</span>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.summary }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="section-block">
+    <div class="section-head">
+      <h2>Mijn favoriete ruimtes</h2>
+      <a href="#" aria-label="Bekijk alle ruimtes">Bekijk alle ruimtes -></a>
+    </div>
+
+    <div class="card-grid card-grid--three">
+      @for (item of favorieteRuimtes; track item.title) {
+        <article class="card card--visual">
+          <div class="card__media">
+            <img
+              [src]="item.image"
+              width="560"
+              height="360"
+              class="card__img"
+              [alt]="item.title"
+            />
+            <button class="icon-chip" type="button" aria-label="Markeer ruimte">o</button>
+          </div>
+          <div class="card__body">
+            <h3>{{ item.title }}</h3>
+            <p class="meta-row">{{ item.meta }} | {{ item.tags }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="section-block">
+    <div class="section-head">
+      <h2>Mijn conceptaanvragen</h2>
+      <a href="#" aria-label="Bekijk alle aanvragen">Bekijk alle aanvragen -></a>
+    </div>
+
+    <article class="concept-card">
+      <img
+        [src]="'/bijeenkomst.jpg'"
+        width="520"
+        height="320"
+        class="concept-card__image"
+        alt="Team dat samenwerkt aan een conceptaanvraag"
+      />
+      <div class="concept-card__main">
+        <h3>Strategiesessie Acme Corporation</h3>
+        <p class="concept-meta-row"><span aria-hidden="true">⌂</span> Bandung</p>
+        <p class="concept-meta-row"><span aria-hidden="true">◷</span> 4 Juni 2026 • 12 personen</p>
+        <p class="concept-created">Aangemaakt op 12 mei 2026</p>
+      </div>
+      <div class="concept-card__timeline" aria-label="Status van conceptaanvraag">
+        @for (item of conceptTimeline; track item.label) {
+          <div class="timeline-item">
+            <span
+              class="timeline-dot"
+              [class.timeline-dot--done]="item.done"
+              [class.timeline-dot--pending]="!item.done"
+              [attr.aria-label]="item.done ? 'Afgerond' : 'In afwachting'"
+            >
+              @if (item.done) {
+                <span class="timeline-check" aria-hidden="true">✓</span>
+              }
+            </span>
+            <div>
+              <strong>{{ item.label }}</strong>
+              <p>{{ item.detail }}</p>
+            </div>
+          </div>
+        }
+      </div>
+      <div class="concept-card__action">
+        <button type="button">Bekijk details</button>
+      </div>
+    </article>
+  </section>
+
+  <section class="section-block section-block--last">
+    <div class="section-head section-head--stack">
+      <h2>Aanbevolen voor jou</h2>
+      <p>Op basis van jouw interesses denken we dat dit ook iets is voor jou!</p>
+    </div>
+
+    <div class="card-grid card-grid--four">
+      @for (item of aanbevelingen; track item.title) {
+        <article class="card card--recommendation">
+          <img
+            [src]="item.image"
+            width="560"
+            height="360"
+            class="card__img"
+            [alt]="item.title"
+          />
+          <div class="card__body">
+            <span class="meta">{{ item.subtitle }}</span>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+            <div class="recommendation-footer">
+              <span>Meer bekijken</span>
+              <span aria-hidden="true">-></span>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+</main>

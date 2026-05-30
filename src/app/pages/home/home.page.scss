@@ -273,9 +273,25 @@
 }
 
 .feature-card__image {
-  background:
-    linear-gradient(180deg, rgba(13, 36, 26, 0.06), rgba(13, 36, 26, 0.22)),
-    url('/hotel-jakarta-amsterdam-westcord-hotels-hortus-botanicus-subtropische-tuin-4.jpg') center/cover;
+  position: relative;
+  overflow: hidden;
+  background: #0f271d;
+}
+
+.feature-card__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(13, 36, 26, 0.06), rgba(13, 36, 26, 0.22));
+  pointer-events: none;
+}
+
+.feature-card__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .feature-card__body {

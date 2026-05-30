@@ -1,4 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Manrope:wght@400;500;700&display=swap');
+@font-face {
+	font-family: 'Manrope';
+	src: url('/font/FrontageProTest-Regular-BF675a4e08e25bc.otf') format('opentype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Manrope';
+	src: url('/font/FrontageProTest-Bold-BF675a4e092a127.otf') format('opentype');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Manrope';
+	src: url('/font/FrontageProTest-Bold-BF675a4e092a127.otf') format('opentype');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Bricolage Grotesque';
+	src: url('/font/FrontageProTest-Regular-BF675a4e08e25bc.otf') format('opentype');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Bricolage Grotesque';
+	src: url('/font/FrontageProTest-Bold-BF675a4e092a127.otf') format('opentype');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Bricolage Grotesque';
+	src: url('/font/FrontageProTest-Bold-BF675a4e092a127.otf') format('opentype');
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
+}
 
 * {
 	box-sizing: border-box;

@@ -7,6 +7,8 @@ type InsightItem = {
   description: string;
   link: string;
   route: string;
+  image: string;
+  imageAlt: string;
 };
 
 type CaseItem = {
@@ -47,6 +49,7 @@ type StoryItem = {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePageComponent {
+  protected readonly topHeroImage = '/headerfoto.jpg';
   protected readonly heroImage = '/hotel-jakarta-amsterdam-westcord-hotels-hortus-botanicus-subtropische-tuin-4.jpg';
 
   protected readonly heroStats: StatItem[] = [
@@ -61,24 +64,32 @@ export class HomePageComponent {
       description: 'Ontdek inspirerende evenementen en netwerkmomenten.',
       link: 'Bekijk bijeenkomsten',
       route: '/bijeenkomsten-events',
+      image: '/bijeenkomst.jpg',
+      imageAlt: 'Evenementen en bijeenkomsten in Hotel Jakarta',
     },
     {
       title: 'Expertise & Inspiratie',
       description: 'Kom meer te weten over de trends, inzichten en expertvisies over de toekomst van de zakelijke evenementen.',
       link: 'Ontdek inspiratie',
       route: '/inspiratie',
+      image: '/expertise en inspiratie.jpg',
+      imageAlt: 'Expertise en inspiratie voor zakelijke evenementen',
     },
     {
       title: 'Ontdek & Beleef',
       description: 'Ervaar de sfeer en de mogelijkheden die Hotel Jakarta uniek maken.',
       link: 'Verken de beleving',
       route: '/ontmoet-beleef',
+      image: '/ontdek en beleef.jpg',
+      imageAlt: 'Ontdek en beleef de sfeer van Hotel Jakarta',
     },
     {
       title: 'Succesverhalen',
       description: 'Lees hoe andere organisaties Hotel Jakarta hebben ervaren. ',
       link: 'Lees succesverhalen',
       route: '/succesverhalen',
+      image: '/Succesverhalen.jpg',
+      imageAlt: 'Succesverhalen van organisaties bij Hotel Jakarta',
     },
   ];
 
